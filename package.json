@@ -1,0 +1,19 @@
+{
+  "name": "pdm_todos",
+  "version": "1.0.0",
+  "description": "Todo App for PDM",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js",
+    "start-dev": "npx nodemon ./src/index.js"
+  },
+  "author": "Omar M Tinajero",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "sqlite3": "^5.1.7"
+  }
+}
