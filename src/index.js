@@ -8,9 +8,9 @@ app.use(express.json());
 app.get("/todos", (req, res) => {
   getAll((err, rows) => {
     if (err) {
-      res.status(500).send(err.message);
+     return res.status(500).send(err.message);
     }
-    res.status(200).send(rows);
+    return res.status(200).send(rows);
   });
 });
 
@@ -18,9 +18,9 @@ app.post("/todo", (req, res) => {
   const {activity} = req.body;
   createTodo(activity, (err) => {
     if (err) {
-      res.status(400).send(err.message);
+    return res.status(400).send(err.message);
     }
-    res.status(201).send({success: `Created new To Do, activity: ${activity}`})
+    return res.status(201).send({success: `Created new To Do, activity: ${activity}`})
   });
 });
 
