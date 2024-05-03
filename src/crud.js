@@ -13,4 +13,16 @@ function getAll(callback) {
   db.all(getAllQuery, callback);
 }
 
-module.exports = { createTodo, getAll };
+function getOne (id){
+  const getQuery = `SELECT * FROM todos WHERE id= ?`;
+
+  db.run(getQuery, [id]);
+}
+
+function deleteOne (id, callback) {
+  const deleteQuery = `DELETE FROM todos WHERE id= ?`;
+
+  db.run(deleteQuery, [id], callback);
+}
+
+module.exports = { createTodo, getAll, deleteOne, getOne };
